@@ -1,0 +1,3 @@
+game$ rails g model User email:text password:text name:text image:text
+
+### game$ rails g migration add_user_id_to_mixtapes user_id:integer ## adding it to the already created table mixtapes
