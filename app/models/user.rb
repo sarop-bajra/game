@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :fantasyteams
+
   has_secure_password
 
   validates :name, length: { minimum: 2 }

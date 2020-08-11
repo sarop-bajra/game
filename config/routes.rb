@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   # Users CRUD
   resources :users
 
+  # FantasyTeams CRUD
+  resources :fantasyteams
+
 end

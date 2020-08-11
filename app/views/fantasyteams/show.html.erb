@@ -1,0 +1,7 @@
+<h2>
+  <%= @fantasyteam.name %>
+</h2>
+<% if @fantasyteam.user_id == @current_user.id %>
+  <%= link_to 'Edit Your Fantasy Team', edit_fantasyteam_path(@fantasyteam) %>
+<% end %>
+(players here)

@@ -1,0 +1,9 @@
+<h2>All Fantasy Teams</h2>
+
+<ul>
+  <% @fantasyteams.each do |f| %>
+  <li>
+    <%= link_to f.name, fantasyteam_path(f.id) %>
+  </li>
+  <% end %>
+</ul>
