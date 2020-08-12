@@ -1,0 +1,12 @@
+<h3>Teams</h3>
+
+<ul>
+      <% @teams.each do |t| %>
+      <li>
+        <a href="<%= team_path(t.id) %>">
+        <%= image_tag t.image, alt: t.name%>
+        
+        </a>
+      </li>
+      <% end %>
+</ul>

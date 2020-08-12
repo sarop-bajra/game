@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   # FantasyTeams CRUD
   resources :fantasyteams
 
+  # Players CRUD
+  resources :players
+
+  # Teams CRUD
+  resources :teams
 end

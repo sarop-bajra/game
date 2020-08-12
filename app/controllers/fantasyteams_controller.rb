@@ -7,13 +7,16 @@ class FantasyteamsController < ApplicationController
 
   def new
     @fantasyteam = Fantasyteam.new
+    @players = Player.all
   end # new
 
   def create
+    # raise 'hell'
     # Create fantasyteam, and associate it with the logged-in user
     @fantasyteam = Fantasyteam.new fantasyteam_params
     @fantasyteam.user_id = @current_user.id
     @fantasyteam.save
+    @fantasyteam.players << Player.find(params[:players])
     redirect_to fantasyteams_path
   end # create
 
@@ -27,19 +30,26 @@ class FantasyteamsController < ApplicationController
 
   def edit
     @fantasyteam = Fantasyteam.find params[:id]
+    @players = Player.all
+
+
+    # raise 'hell'
+
     redirect_to fantasyteams_path unless @fantasyteam.user_id == @current_user.id
   end
 
   def update
-    fantasyteam = Fantasyteam.find params[:id]
-    if fantasyteam.user != @current_user
+    @fantasyteam = Fantasyteam.find params[:id]
+    if @fantasyteam.user != @current_user
       redirect_to fantasyteams_path
       return # leave the function early!! i.e. dont do the update below
     end
 
-    fantasyteam.update fantasyteam_params # actually perform the update using the strong params
+    @fantasyteam.players << Player.find(params[:players])
 
-    redirect_to fantasyteams_path(fantasyteam) # you can leave off .id when you pass an object
+    @fantasyteam.update fantasyteam_params # actually perform the update using the strong params
+
+    redirect_to fantasyteams_path(@fantasyteam) # you can leave off .id when you pass an object
   end
 
   def destroy

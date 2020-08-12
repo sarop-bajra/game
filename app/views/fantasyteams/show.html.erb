@@ -4,4 +4,12 @@
 <% if @fantasyteam.user_id == @current_user.id %>
   <%= link_to 'Edit Your Fantasy Team', edit_fantasyteam_path(@fantasyteam) %>
 <% end %>
-(players here)
+
+# player link to come and team link to come
+<ul>
+  <% @fantasyteam.players.each do |p| %>
+  <li>
+    <%= link_to p.name %> | <%= link_to p.team_id %>
+  </li>
+  <% end %>
+</ul>
