@@ -1,7 +1,18 @@
-<h2>Team <%= @team.name %></h2>
-<p>
-<strong>Name:</strong>
-<%= @team.name %>
-</p>
+<h2><%= @team.name %></h2>
 
-<%= image_tag @team.image, alt: @team.name%>
+<div class="">
+  <%= image_tag @team.image, alt: @team.name%>
+</div>
+<br>
+<strong>Players:</strong>
+<ul style="list-style-type:none;">
+      <% @team.players.each do |p| %>
+      <div class="players">
+        <li>
+          <a href="<%= player_path(p.id) %>">
+            <%= image_tag p.image, alt: p.name%>
+          </a>
+        </li>
+      </div>
+      <% end %>
+</ul>

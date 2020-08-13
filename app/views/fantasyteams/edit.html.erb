@@ -1,3 +1,29 @@
 <h2>Edit Your Fantasy Team</h2>
 
-<%= render partial: 'form' %>
+<%= form_for @fantasyteam do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :image, 'Image URL' %>
+  <%= f.text_field :image %>
+  <br>
+  <ul style="list-style-type:none;">
+    <% @players.each do |player| %>
+      <div class="edit_fantasyteam">
+        <li>
+
+          <%= label_tag do %>
+          <%= check_box_tag 'players[]', player.id, @fantasyteam.players.include?(player) %>
+          <%= image_tag player.image %>
+          <% end %>
+
+        </li>
+      </div>
+    <% end %>
+  </ul>
+
+<%= f.submit "Edit Fantasy Team" %>
+
+<% end %>

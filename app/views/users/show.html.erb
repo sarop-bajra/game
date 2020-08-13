@@ -1,5 +1,9 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <%= link_to 'Create New Fantasy Team', new_fantasyteam_path %>
+</div>
 <h3>Your Fantasy Teams</h3>
+
+
 <% @current_user.fantasyteams.each do |t|  %>
   <%= link_to t.name, fantasyteam_path(t.id) %>
   <br>

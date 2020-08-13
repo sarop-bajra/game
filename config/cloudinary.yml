@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: sarop-bajra
+  api_key: '883945247258735'
+  api_secret: PktUqXjqoOg8s4nsjDPiFp7kWRI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: sarop-bajra
+  api_key: '883945247258735'
+  api_secret: PktUqXjqoOg8s4nsjDPiFp7kWRI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: sarop-bajra
+  api_key: '883945247258735'
+  api_secret: PktUqXjqoOg8s4nsjDPiFp7kWRI
+  enhance_image_tag: true
+  static_file_support: false

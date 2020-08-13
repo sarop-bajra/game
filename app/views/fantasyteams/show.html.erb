@@ -1,18 +1,20 @@
 <h2>
   <%= @fantasyteam.name %>
 </h2>
+<div class="fantasyteam_image">
+  <%= cl_image_tag @fantasyteam.image, :width => 150 %>
+</div>
 <% if @fantasyteam.user_id == @current_user.id %>
   <%= link_to 'Edit Your Fantasy Team', edit_fantasyteam_path(@fantasyteam) %>
 <% end %>
-
-# player link to come and team link to come
 <ul style="list-style-type:none;">
   <% @fantasyteam.players.each do |p| %>
   <div class="fantasyteam">
-  <li>
-    <%= link_to image_tag p.image %>
-    <%# <!-- <%= link_to image_tag p.team.image %>
-  </li>
+    <li>
+      <a href="<%= player_path(p.id) %>">
+        <%= image_tag p.image, alt: p.name%>
+      </a>
+    </li>
   </div>
   <% end %>
 </ul>

@@ -16,12 +16,17 @@
   display: inline-block
 }
 
+.new_fantasyteam {
+  display: inline-block
+}
+
 
 h1 {
   font-size: 100px;
 }
 
 body {
+  margin: 0;
   background: url("https://i.imgur.com/9Uc8tkO.jpg") no-repeat center fixed;
   background-size: cover;
   text-align:center;
@@ -32,6 +37,25 @@ body {
 
 .login{
 
-  padding:20px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 
+}
+
+.hello {
+  float: right;
+  margin: 14px;
+  font-size: 17px;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.fantasy_image {
+  float: right;
 }

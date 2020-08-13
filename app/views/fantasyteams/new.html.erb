@@ -1,23 +1,27 @@
 <h2>Create Your Fantasy Team</h2>
 
-<%= form_for @fantasyteam do |f| %>
+<%= form_for @fantasyteam, html: {multipart: true} do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
 
-  <%= f.label :image, 'Image URL' %>
-  <%= f.text_field :image %>
+  <%= f.label :image, 'Team Logo' %>
+  <%= f.cl_image_upload :image %>
   <br>
 
-<% @players.each do |player| %>
-  <%= label_tag do %>
-    <%= check_box_tag 'players[]', player.id %>
-    <%= player.name %>(<%= player.team.name %>)
+<ul style="list-style-type:none;">
+  <% @players.each do |player| %>
+    <div class="new_fantasyteam">
+      <li>
+        <%= label_tag do %>
+          <%= check_box_tag 'players[]', player.id %>
+          <%= image_tag player.image %>
+        <% end %>
+      </li>
+    </div>
   <% end %>
-  <br>
-
-<% end %>
+</ul>
 
 <%= f.submit "Create Fantasy Team" %>
 

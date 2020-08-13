@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Game</title>
+    <title>Fantasy Football</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
-    <h1>Fantasy Football</h1>
-    <nav>
-      <% if @current_user.present? %> <!--also allowed before fetch_user if session[:user_id].present?-->
-        Hello, <%= @current_user.name %>
-        |
-        <%= link_to 'Dashboard', user_path(@current_user) %>
-        |
-        <%= link_to 'Logout', login_path, method: 'delete' %>
+    <% if @current_user.present? %>
+      <div class="topnav">
+        <%= link_to 'Home', home_path %>
+
+      <div class="subnav">
+        <button class="subnavbtn">Dashboard <i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            <%= link_to 'Manager-Mode', user_path(@current_user) %>
+            <%= link_to 'Teams', teams_path %>
+            <%= link_to 'Players', players_path %>
+            <%= link_to 'Fantasy Teams', fantasyteams_path %>
+        </div>
+      </div>
+
+        <div class="topnav-right">
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+        </div>
+        <div class="hello">
+          Hello, <%= @current_user.name %>
+        </div>
+      </div>
+
       <% else %>
-        <%= link_to 'Login', login_path %>
-        |
-        <%= link_to 'Sign Up', new_user_path %>
-      <% end %>
-    </nav>
+
+        <div class="topnav">
+          <%= link_to 'Home', home_path %>
+          <div class="topnav-right">
+            <%= link_to 'Login', login_path %>
+            <%= link_to 'Sign Up', new_user_path %>
+          </div>
+        </div>
+
+    <% end %>
+
     <%= yield %>
+    <footer class="footer">
+      &copy; SB Productions
+    </footer>
   </body>
 </html>

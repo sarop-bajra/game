@@ -14,6 +14,14 @@ class FantasyteamsController < ApplicationController
     # raise 'hell'
     # Create fantasyteam, and associate it with the logged-in user
     @fantasyteam = Fantasyteam.new fantasyteam_params
+
+    # Handle upload
+    if params[:file].present?
+      # actually forward uploaded file on to Cloudinary server
+      response = Cloudinary::Uploader.upload params[:file]
+      @fantasyteam.image = response['public_id']
+    end
+
     @fantasyteam.user_id = @current_user.id
     @fantasyteam.save
     @fantasyteam.players << Player.find(params[:players])
