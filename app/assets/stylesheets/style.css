@@ -1,3 +1,37 @@
-li {
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+.players {
   display: inline-block
+}
+
+.teams {
+  display: inline-block
+}
+
+.fantasyteam {
+  display: inline-block
+}
+
+.edit_fantasyteam {
+  display: inline-block
+}
+
+
+h1 {
+  font-size: 100px;
+}
+
+body {
+  background: url("https://i.imgur.com/9Uc8tkO.jpg") no-repeat center fixed;
+  background-size: cover;
+  text-align:center;
+  color: white;
+  font-size: 30px;
+  font-family: 'Unica One', cursive;
+}
+
+.login{
+
+  padding:20px;
+
 }

@@ -45,6 +45,8 @@ class FantasyteamsController < ApplicationController
       return # leave the function early!! i.e. dont do the update below
     end
 
+
+    @fantasyteam.players.clear
     @fantasyteam.players << Player.find(params[:players])
 
     @fantasyteam.update fantasyteam_params # actually perform the update using the strong params

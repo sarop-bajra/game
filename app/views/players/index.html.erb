@@ -1,11 +1,13 @@
 <h3>Players</h3>
 
-<ul>
+<ul style="list-style-type:none;">
       <% @players.each do |p| %>
-      <li>
-        <a href="<%= player_path(p.id) %>">
-        <%= image_tag p.image, alt: p.name%>
-        </a>
-      </li>
+      <div class="players">
+        <li>
+          <a href="<%= player_path(p.id) %>">
+            <%= image_tag p.image, alt: p.name%>
+          </a>
+        </li>
+      </div>
       <% end %>
 </ul>

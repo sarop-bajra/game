@@ -7,13 +7,20 @@
   <%= f.label :image, 'Image URL' %>
   <%= f.text_field :image %>
   <br>
+  <ul style="list-style-type:none;">
+    <% @players.each do |player| %>
+      <div class="edit_fantasyteam">
+        <li>
 
-<% @players.each do |player| %>
-  <%= check_box_tag 'players[]', player.id %>
-  <%= player.name  %> (<%= player.team.name %>)
-  <br>
+          <%= label_tag do %>
+          <%= check_box_tag 'players[]', player.id, @fantasyteam.players.include?(player) %>
+          <%= image_tag player.image %>
+          <% end %>
 
-<% end %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
 
 <%= f.submit "Edit Fantasy Team" %>
 

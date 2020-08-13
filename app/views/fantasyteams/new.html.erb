@@ -11,8 +11,10 @@
   <br>
 
 <% @players.each do |player| %>
-  <%= check_box_tag 'players[]', player.id %>
-  <%= player.name  %> (<%= player.team.name %>)
+  <%= label_tag do %>
+    <%= check_box_tag 'players[]', player.id %>
+    <%= player.name %>(<%= player.team.name %>)
+  <% end %>
   <br>
 
 <% end %>

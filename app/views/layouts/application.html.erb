@@ -10,10 +10,12 @@
   </head>
 
   <body>
-    <h1>Game</h1>
+    <h1>Fantasy Football</h1>
     <nav>
       <% if @current_user.present? %> <!--also allowed before fetch_user if session[:user_id].present?-->
         Hello, <%= @current_user.name %>
+        |
+        <%= link_to 'Dashboard', user_path(@current_user) %>
         |
         <%= link_to 'Logout', login_path, method: 'delete' %>
       <% else %>

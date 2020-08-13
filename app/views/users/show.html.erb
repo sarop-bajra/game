@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Dashboard</h1>
+<h3>Your Fantasy Teams</h3>
+<% @current_user.fantasyteams.each do |t|  %>
+  <%= link_to t.name, fantasyteam_path(t.id) %>
+  <br>
+<% end %>

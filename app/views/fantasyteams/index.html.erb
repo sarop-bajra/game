@@ -1,6 +1,6 @@
 <h2>All Fantasy Teams</h2>
 
-<ul>
+<ul style="list-style-type:none;">
   <% @fantasyteams.each do |f| %>
   <li>
     <%= link_to f.name, fantasyteam_path(f.id) %>
