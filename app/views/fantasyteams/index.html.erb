@@ -4,6 +4,7 @@
   <% @fantasyteams.each do |f| %>
   <li>
     <%= link_to f.name, fantasyteam_path(f.id) %>
+    - (Manager <%= f.user.name %>)
   </li>
   <% end %>
 </ul>

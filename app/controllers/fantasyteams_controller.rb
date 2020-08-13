@@ -59,11 +59,13 @@ class FantasyteamsController < ApplicationController
 
     @fantasyteam.update fantasyteam_params # actually perform the update using the strong params
 
-    redirect_to fantasyteams_path(@fantasyteam) # you can leave off .id when you pass an object
+    redirect_to fantasyteam_path(@fantasyteam) # you can leave off .id when you pass an object
   end
 
   def destroy
-  end
+    Fantasyteam.destroy params[:id]
+    redirect_to user_path(@current_user)
+  end # destroy
 
   def fantasyteam_params
     params.require(:fantasyteam).permit(:name, :image)

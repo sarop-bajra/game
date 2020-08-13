@@ -2,10 +2,11 @@
   <%= @fantasyteam.name %>
 </h2>
 <div class="fantasyteam_image">
-  <%= cl_image_tag @fantasyteam.image, :width => 150 %>
+  <%= cl_image_tag @fantasyteam.image, :width=>150, :height=>150, :gravity=>"faces", :crop=>"fill", :radius=>"max" %>
 </div>
 <% if @fantasyteam.user_id == @current_user.id %>
   <%= link_to 'Edit Your Fantasy Team', edit_fantasyteam_path(@fantasyteam) %>
+  <%= link_to 'Delete Your Fantasy Team', fantasyteam_path(@fantasyteam), method: 'delete' %>
 <% end %>
 <ul style="list-style-type:none;">
   <% @fantasyteam.players.each do |p| %>

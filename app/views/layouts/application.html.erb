@@ -11,19 +11,21 @@
   </head>
 
   <body>
-    <% if @current_user.present? %>
+    <div class="wrapper">
+
+      <% if @current_user.present? %>
       <div class="topnav">
         <%= link_to 'Home', home_path %>
 
-      <div class="subnav">
-        <button class="subnavbtn">Dashboard <i class="fa fa-caret-down"></i></button>
+        <div class="subnav">
+          <button class="subnavbtn">Dashboard <i class="fa fa-caret-down"></i></button>
           <div class="subnav-content">
             <%= link_to 'Manager-Mode', user_path(@current_user) %>
             <%= link_to 'Teams', teams_path %>
             <%= link_to 'Players', players_path %>
             <%= link_to 'Fantasy Teams', fantasyteams_path %>
+          </div>
         </div>
-      </div>
 
         <div class="topnav-right">
           <%= link_to 'Logout', login_path, method: 'delete' %>
@@ -35,17 +37,19 @@
 
       <% else %>
 
-        <div class="topnav">
-          <%= link_to 'Home', home_path %>
-          <div class="topnav-right">
-            <%= link_to 'Login', login_path %>
-            <%= link_to 'Sign Up', new_user_path %>
-          </div>
+      <div class="topnav">
+        <%= link_to 'Home', home_path %>
+        <div class="topnav-right">
+          <%= link_to 'Login', login_path %>
+          <%= link_to 'Sign Up', new_user_path %>
         </div>
+      </div>
 
-    <% end %>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+      <div class="push"></div>
+    </div>
     <footer class="footer">
       &copy; SB Productions
     </footer>

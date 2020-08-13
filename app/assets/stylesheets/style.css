@@ -25,7 +25,13 @@ h1 {
   font-size: 100px;
 }
 
+html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
+  height: 100%;
   margin: 0;
   background: url("https://i.imgur.com/9Uc8tkO.jpg") no-repeat center fixed;
   background-size: cover;
@@ -35,27 +41,34 @@ body {
   font-family: 'Unica One', cursive;
 }
 
-.login{
-
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-
-}
-
 .hello {
   float: right;
   margin: 14px;
   font-size: 17px;
 }
 
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
 }
 
 .fantasy_image {
   float: right;
+}
+
+.label {
+    float: left;
+    width: 200px;
+    padding-right: 24px;
+}
+
+.login {
+  
 }

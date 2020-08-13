@@ -6,6 +6,15 @@ class UsersController < ApplicationController
   def create
 
     @user = User.create user_params
+
+    # Handle upload
+    if params[:file].present?
+      # actually forward uploaded file on to Cloudinary server
+      response = Cloudinary::Uploader.upload params[:file]
+      @user.image = response['public_id']
+      @user.save
+    end
+
     # Check whether the above create was successful (ie created a
     # row in the users table ie the object has an id)
     # or if it failed due to a data validation error
@@ -21,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @user = User.find params[:id]
   end
 
   def edit

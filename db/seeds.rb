@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 print "Creating users..."
 User.destroy_all
-u1 = User.create! email: 'luke@ga.co', password: 'chicken', name: 'Luke'
-u2 = User.create! email: 'mikaela@ga.co', password: 'chicken', name: 'Mikaela'
-u3 = User.create! email: 'zara@ga.co', password: 'chicken', name: 'Zara'
+u1 = User.create! email: 'luke@ga.co', password: 'chicken', name: 'Luke', image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353352/Avatar_Dog-512_v1wwe9.png'
+u2 = User.create! email: 'mikaela@ga.co', password: 'chicken', name: 'Mikaela', image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353381/Avatar_Panda-512_ntkuqu.png'
+u3 = User.create! email: 'zara@ga.co', password: 'chicken', name: 'Zara', image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353366/Avatar_Cat-512_z1rkgd.png'
 puts "Created #{ User.count } users."
 
 puts "Creating teams..."
@@ -43,11 +43,23 @@ puts "Created #{ Player.count } players."
 
 puts "Creating teams..."
 Fantasyteam.destroy_all
-t1 = Fantasyteam.create! name: 'HowdeFC', user_id: u1.id
-t2 = Fantasyteam.create! name: 'MulaFC', user_id: u2.id
-t3 = Fantasyteam.create! name: 'GoolshunG Rovers', user_id: u3.id
-t4 = Fantasyteam.create! name: 'HSK-7', user_id: u1.id
-t5 = Fantasyteam.create! name: 'LIFE DAMAGE XI', user_id: u1.id
-t6 = Fantasyteam.create! name: 'Target', user_id: u1.id
-t7 = Fantasyteam.create! name: 'Minions', user_id: u1.id
+ft1 = Fantasyteam.create! name: 'HowdeFC', user_id: u1.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353096/avatar-avatars-ninja-profile-user-icon-user-avatars-png-512_512_nrtryv.png'
+ft2 = Fantasyteam.create! name: 'MulaFC', user_id: u1.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353397/Avatar_Pig-512_roxart.png'
+ft3 = Fantasyteam.create! name: 'GoolshunG Rovers', user_id: u2.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353414/Avatar_Pumpkin-512_syuxzu.png'
+ft4 = Fantasyteam.create! name: 'HSK-7', user_id: u2.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353339/Avatar_Rabbit-512_unqcna.png'
+ft5 = Fantasyteam.create! name: 'LIFE DAMAGE XI', user_id: u3.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353327/034_Thanos-512_hzmqzj.png'
+ft6 = Fantasyteam.create! name: 'Target', user_id: u3.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353451/profile_llama_4x_cbdhlm.png'
+ft7 = Fantasyteam.create! name: 'Minions', user_id: u1.id, image: 'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_200/v1597353089/User_Avatar-04-512_xq0kjz.png'
 puts "Created #{ Fantasyteam.count } teams."
+
+ft1.players << p1 << p2 << p3 << p4 << p5
+ft2.players << p6 << p7 << p8 << p9 << p10
+ft3.players << p11 << p12 << p13 << p14 << p1
+ft4.players << p1 << p2 << p3 << p4 << p5
+ft5.players << p6 << p7 << p8 << p9 << p10
+ft6.players << p11 << p12 << p13 << p14 << p1
+ft7.players << p11 << p12 << p13 << p14 << p3
+
+puts "Test fantasy team associations"
+print "The fantasy team '#{ ft1.name }' has players: "
+puts ft1.players.pluck(:name).join(', ')
