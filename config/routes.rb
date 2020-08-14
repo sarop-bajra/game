@@ -26,4 +26,6 @@ Rails.application.routes.draw do
 
   # Teams CRUD
   resources :teams
+
+  
 end
