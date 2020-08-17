@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+  ruby-2.7.0
 
-* System dependencies
+* Name
+  Fantasy Football
 
-* Configuration
+* Description
+  To access the website users will need to create an account
+  Once the account is created users can create their fantasy team
+  Users can create multiple Fantasy Teams
+  Users can view other users Fantasy teams as well
+  Users can only edit their own Fantasy Team.
+  Users can upload images to their profile and upload images to their Fantasy team.
 
-* Database creation
+* Usage
+  Access the webpage from any browser https://guarded-atoll-04463.herokuapp.com/
 
-* Database initialization
+* Roadmap
+  Users in the future can play against each other
 
-* How to run the test suite
+* Authors and Acknowledgment
+  This project would not have been a success without the supervision and help from Luke Hammer and Zara Ispahany
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Project Status
+  The Project is on hold and awaiting further inputs.
