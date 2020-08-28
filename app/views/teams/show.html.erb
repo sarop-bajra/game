@@ -1,7 +1,7 @@
 <h2><%= @team.name %></h2>
 
 <div class="">
-  <%= image_tag @team.image, alt: @team.name%>
+  <%= cl_image_tag @team.image, alt: @team.name%>
 </div>
 <br>
 <strong>Players:</strong>
@@ -10,7 +10,7 @@
       <div class="players">
         <li>
           <a href="<%= player_path(p.id) %>">
-            <%= image_tag p.image, alt: p.name%>
+            <%= cl_image_tag p.image, alt: p.name%>
           </a>
         </li>
       </div>

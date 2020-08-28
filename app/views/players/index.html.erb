@@ -5,7 +5,7 @@
       <div class="players">
         <li>
           <a href="<%= player_path(p.id) %>">
-            <%= image_tag p.image, alt: p.name%>
+            <%= cl_image_tag p.image, alt: p.name%>
           </a>
         </li>
       </div>

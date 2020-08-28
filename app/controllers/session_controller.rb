@@ -1,7 +1,4 @@
 class SessionController < ApplicationController
-  def new
-
-  end
 
   # if Login successful create session
   def create

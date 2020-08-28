@@ -1,9 +1,4 @@
 class TeamsController < ApplicationController
-  def new
-  end
-
-  def create
-  end
 
   def index
     @teams = Team.all
@@ -13,12 +8,4 @@ class TeamsController < ApplicationController
     @team = Team.find params[:id]
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end

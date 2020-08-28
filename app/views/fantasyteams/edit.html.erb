@@ -16,7 +16,7 @@
 
           <%= label_tag do %>
           <%= check_box_tag 'players[]', player.id, @fantasyteam.players.include?(player) %>
-          <%= image_tag player.image %>
+          <%= cl_image_tag player.image %>
           <% end %>
 
         </li>

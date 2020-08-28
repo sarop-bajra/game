@@ -5,7 +5,7 @@
       <div class="teams">
         <li>
           <a href="<%= team_path(t.id) %>">
-            <%= image_tag t.image, alt: t.name%>
+            <%= cl_image_tag t.image, alt: t.name%>
 
           </a>
         </li>
