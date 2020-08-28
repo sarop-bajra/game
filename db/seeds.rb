@@ -16,9 +16,9 @@ puts "Creating teams..."
 Team.destroy_all
 t1 = Team.create! name: 'Arsenal', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265109/Project/Teams/580b57fcd9996e24bc43c4df_jhelrq.png'
 t2 = Team.create! name: 'Chelsea', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265085/Project/Teams/580b57fcd9996e24bc43c4e1_hxkhiw.png'
-t3 = Team.create! name: 'Liverpool', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265060/Project/Teams/580b57fcd9996e24bc43c4e5_ghrr3t.png'
-t4 = Team.create! name: 'Manchester United', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597264989/Project/Teams/580b57fcd9996e24bc43c4e7_ohgxte.png'
-t5 = Team.create! name: 'Manchester City', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597264965/Project/Teams/580b57fcd9996e24bc43c4e6_f5iypg.png'
+t3 = Team.create! name: 'Manchester United', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597264989/Project/Teams/580b57fcd9996e24bc43c4e7_ohgxte.png'
+t4 = Team.create! name: 'Manchester City', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597264965/Project/Teams/580b57fcd9996e24bc43c4e6_f5iypg.png'
+t5 = Team.create! name: 'Liverpool', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265060/Project/Teams/580b57fcd9996e24bc43c4e5_ghrr3t.png'
 t6 = Team.create! name: 'Tottenham Hotspurs', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265036/Project/Teams/580b57fcd9996e24bc43c4ee_zbwy3h.png'
 t7 = Team.create! name: 'Leicester', image:'https://res.cloudinary.com/sarop-bajra/image/upload/c_scale,w_250/v1597265013/Project/Teams/580b57fcd9996e24bc43c4e8_iliqhw.png'
 puts "Created #{ Team.count } teams."
